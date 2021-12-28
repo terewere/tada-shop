@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_card"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/dp_8"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
+
+        <ImageView
+            android:id="@+id/loadingIndicator"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@drawable/progress_animation"
+            app:layout_constraintBottom_toBottomOf="@+id/category_image_view"
+            app:layout_constraintEnd_toEndOf="@+id/category_image_view"
+            app:layout_constraintStart_toStartOf="@+id/category_image_view"
+            app:layout_constraintTop_toTopOf="@+id/category_image_view" />
+
+        <ImageView
+            android:id="@+id/category_image_view"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:background="@drawable/round_button"
+            android:contentDescription="@string/category_image"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+
+        <TextView
+            android:id="@+id/category_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:lines="2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/category_image_view"
+            tools:text="Item Name name name wofe348" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

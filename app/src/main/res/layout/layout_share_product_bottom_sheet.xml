@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0.0dip"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="100.0dip"
+                android:layout_height="6.0dip"
+                android:layout_gravity="center"
+                android:layout_margin="16.0dip"
+                android:background="@drawable/view_scroller_bottom_sheet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunito_sans_extra_bold"
+                android:letterSpacing="0.4"
+                android:padding="12.0dip"
+                android:text="@string/share"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@+id/value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunito_sans_regular"
+                android:padding="18.0dip"
+                android:text="@string/share_with_friends_to_earn_more"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#ff979797" />
+
+            <include layout="@layout/item_share_product" />
+
+            <include layout="@layout/item_add_profit" />
+
+            <include layout="@layout/item_show_receipt_preview" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/product_share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentEnd="true"
+        android:text="@string/share_product"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:icon="@drawable/ic_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:iconTint="@color/white"
+
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

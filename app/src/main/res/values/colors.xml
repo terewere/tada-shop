@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000</color>
+    <color name="red">#ff0d00</color>
+    <color name="white">#FFF</color>
+    <color name="colorPrimary">#ff09427d</color>
+    <color name="colorPrimaryDark">#ff09427d</color>
+    <color name="green_dark">#19887a</color>
+    <color name="transparent">#00000000</color>
+    <color name="primary_light">#3970F376</color>
+    <color name="colorAccent">#ff018786</color>
+    <color name="colorAccentLight">#ff03dac5</color>
+    <color name="primary_text">#212121</color>
+    <color name="gray_light">#e8e8e8</color>
+    <color name="gray_dark">#858585</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#ffffff</color>
+    <color name="divider">#b6b6b6</color>
+    <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorSecondary">#ffffff</color>
+    <color name="image_readability_tint">#80000000</color>
+    <color name="background_button">#ff1099ee</color>
+    <color name="active">#D2D2D2</color>
+    <color name="non_square_icon_background">#F5F5F5</color>
+
+</resources>

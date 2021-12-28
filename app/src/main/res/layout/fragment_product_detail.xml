@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/pro_details_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pro_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="72dp">
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/layout_views_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="cardView3,
+                detail_title_tv,
+                detail_price_tv,,
+                detail_desc_label" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="@dimen/dp_8"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:overScrollMode="never"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.kasa.utils.PagerIndicatorView
+                    android:id="@+id/page_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="bottom"
+                    android:contentDescription="@string/switch_pages"
+                    android:padding="4dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/detail_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView3"
+                tools:text="Some Title of The Product van be multiline" />
+
+
+            <TextView
+                android:id="@+id/detail_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_title_tv"
+                tools:text="₵200.99" />
+
+            <TextView
+                android:id="@+id/detail_desc_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="60dp"
+                android:text="DESCRIPTION"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_title_tv" />
+
+            <TextView
+                android:id="@+id/detail_desc_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_desc_label"
+                tools:text="TextViewveoihj" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:paddingTop="@dimen/dp_24"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/share_product_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="bottom|left"
+            app:backgroundTint="@color/white"
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentStart="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/detail_share_product"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/ic_share"
+            app:iconTint="@color/colorPrimary"
+
+            />
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/detail_check_out_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:backgroundTint="@color/colorPrimary"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_alignParentEnd="true"
+            android:text="@string/check_out"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/ic_add_shopping_cart_24"
+            app:iconTint="@color/white"
+
+            />
+    </RelativeLayout>
+
+    <include layout="@layout/layout_share_product_bottom_sheet" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

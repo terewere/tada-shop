@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/freedom_justice"
+    android:fitsSystemWindows="true"
+    >
+
+
+    <LinearLayout
+        android:padding="25dp"
+        android:id="@+id/form_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true"
+        android:focusable="true" >
+
+
+        <TextView
+            android:text="@string/enter_your_password"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_marginVertical="10dp"
+                android:text="@string/welcome_back"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtvNumber"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_marginVertical="10dp"
+                android:text="@string/_244300000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:hint="@string/password">
+            <requestFocus/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPassword"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/lock_icon"
+                android:drawableLeft="@drawable/lock_icon"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:text="@string/forgot_your_password"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:text="@string/log_in"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
