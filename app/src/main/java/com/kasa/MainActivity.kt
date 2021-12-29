@@ -83,17 +83,16 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
 
         setupViewModel()
         setupUI()
-//        viewModel2.getCategoryWithItemsWithImages()
 
 
-        lifecycleScope.launch {
-            viewModel.getProducts(1).distinctUntilChanged().collectLatest {
-                 i("testing", it.toString())
-               // listAdapter.submitData(it)
-
-
-            }
-        }
+//        lifecycleScope.launch {
+//            viewModel.getProducts(1).distinctUntilChanged().collectLatest {
+//                 i("testing", it.toString())
+//               // listAdapter.submitData(it)
+//
+//
+//            }
+//        }
 
 
     }

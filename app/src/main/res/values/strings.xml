@@ -129,6 +129,12 @@
     <string name="my_profit">My profit</string>
     <string name="item_s_1">Item/s (1)</string>
     <string name="share">SHARE</string>
+    <string name="no_item_in_the_cart">No item in the cart</string>
+    <string name="minus_btn_desc">"decrease cart "</string>
+    <string name="plus_btn_desc">increase cart</string>
+    <string name="card_divider">card divider</string>
+    <string name="price_card_items_string">items(%s)</string>
+    <string name="menu">Cart</string>
 
 
 </resources>

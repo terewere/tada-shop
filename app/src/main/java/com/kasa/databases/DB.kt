@@ -6,7 +6,9 @@ import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import com.kasa.dao.CategoryDao
 import com.kasa.dao.ProductDao
+import com.kasa.dao.ShoppingCartDao
 import com.kasa.entities.*
+import com.kasa.models.CartItem
 import com.kasa.models.Category
 import com.kasa.models.Product
 import com.kasa.models.ProductImage
@@ -21,6 +23,7 @@ import java.util.*
         Product::class,
         ProductImage::class,
         Category::class,
+        CartItem::class,
         RemoteKeys::class,
     ],
     version = 1,
@@ -32,6 +35,7 @@ abstract class DB : RoomDatabase() {
     abstract fun productDao(): ProductDao
     abstract fun categoryDao(): CategoryDao
     abstract fun getRepoDao(): RemoteKeysDao
+    abstract fun getCartDao(): ShoppingCartDao
 }
 
 class Converters {

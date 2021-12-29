@@ -14,7 +14,7 @@ object Constants {
 
       //const val BASE_URL = "http://10.0.2.2:8000"
 //    const val BASE_URL = "http://192.168.10.10"
-    const val BASE_URL = "https://6989-154-160-16-181.ngrok.io"
+    const val BASE_URL = "https://80bd-154-160-23-155.ngrok.io"
 //    const val BASE_URL = "https://ks.ownaradio.com"
 
     const val API_URL = "${BASE_URL}/api/"

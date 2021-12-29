@@ -71,8 +71,6 @@ class ProductFragment : Fragment(),
         savedInstanceState: Bundle?
     ): View {
 
-        ActivityMainBinding.inflate(layoutInflater).searchView.visibility = View.GONE
-
         _binding = FragmentProductBinding.inflate(inflater, container, false)
         val view = binding.root
 

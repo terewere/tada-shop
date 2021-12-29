@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.paging.ExperimentalPagingApi
 import androidx.viewpager2.widget.ViewPager2
@@ -16,6 +18,7 @@ import com.kasa.databinding.FragmentProductDetailBinding
 import com.kasa.models.ProductWithImages
 import com.kasa.utils.Constants
 import com.kasa.utils.extentions.setTitle
+import kotlinx.coroutines.launch
 
 
 @ExperimentalPagingApi
@@ -58,6 +61,15 @@ class ProductDetailFragment : Fragment(), Injectable {
 
 
 		PriceShareBottomSheet(binding, viewModel,productWithImages?.product!!, this)
+
+		binding.detailCheckOutBtn.setOnClickListener {
+
+			viewLifecycleOwner.lifecycleScope.launch {
+				viewModel.incrementItemInCart(productWithImages?.product!!.id )
+				findNavController().navigate(R.id.nav_cart)
+			}
+
+		}
 
 		return binding.root
 	}

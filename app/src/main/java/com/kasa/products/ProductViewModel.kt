@@ -15,7 +15,8 @@ import javax.inject.Inject
 class ProductViewModel
 @Inject
 constructor(
-    private val repo: ProductRepository
+    private val repo: ProductRepository,
+    private val cart: ShoppingCart
 ) : ViewModel() {
 
 
@@ -42,15 +43,16 @@ constructor(
     }
 
 
+    fun getCartItems() = cart.itemsInCart
 
 
+    suspend fun getItemsCountFlow() = cart.getItemsCount
+    suspend fun getTotalAmount() = cart.getTotalAmount
 
-
-
-
-
-
-
+    suspend fun incrementItemInCart(productId: Long) = cart.incrementItemInCart(productId)
+    suspend fun decrementItemInCart(productId: Long) = cart.decrementItemInCart(productId)
+    suspend fun itemsInCart() = cart.itemsInCart()
+    suspend fun empty() = cart.empty()
 
 
 

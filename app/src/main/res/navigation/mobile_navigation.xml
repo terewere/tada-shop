@@ -36,11 +36,17 @@
         android:name="com.kasa.products.ProductFragment"
         tools:layout="@layout/fragment_product" />
 
+
     <fragment
         android:id="@+id/nav_product_detail"
         android:name="com.kasa.products.ProductDetailFragment"
         tools:layout="@layout/fragment_product" />
 
+    <fragment
+        android:id="@+id/nav_cart"
+        android:label="@string/menu"
+        android:name="com.kasa.products.CartFragment"
+        tools:layout="@layout/fragment_cart" />
 
     <fragment
         android:id="@+id/nav_pickCountry"
