@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.tada"
-        minSdkVersion 17
+        minSdkVersion 16
         targetSdkVersion 32
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
