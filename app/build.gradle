@@ -9,13 +9,13 @@ plugins {
 
 android {
 
-    compileSdkVersion 31
+    compileSdkVersion 32
 //    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.tada"
         minSdkVersion 17
-        targetSdkVersion 31
+        targetSdkVersion 32
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         versionCode 1
