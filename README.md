@@ -12,7 +12,7 @@ Some other features are as following:
 - See all orders placed.
 - Increase/Decrease quantity of product in cart.
 - Track orders with a button click that takes the user to a chat conversation on WhatsApp.
-- Tested using Espresso. Written unit, instrumentation and UI tests.
+
 
 ## Some Screenshots
 
@@ -47,8 +47,7 @@ Clone this repository and import into Android Studio
 git clone https://github.com/terewere/tada-shop.git
 ```
 
-### Run
-- run Gradle build
+
 
 ## Built With
 - Kotlin
@@ -61,7 +60,10 @@ git clone https://github.com/terewere/tada-shop.git
 - Picasso
 
 ### BACKEND
-- url 
+- url - https://ks.ownaradio.com/api
+- Laravel PHP
+- Nginx
+- Let’s Encrypt (SSL certificate) 
 
 
 

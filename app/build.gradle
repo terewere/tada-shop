@@ -2,17 +2,15 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
+//    id 'com.google.gms.google-services'
     id("kotlin-parcelize")
-    id 'com.google.firebase.crashlytics'
-
 
 }
 
 android {
     signingConfigs {
         release {
-            storeFile file('/Users/sourcecode/Android Certificate/shaibu.jks')
+            storeFile file('/Users/sourcecode/Dropbox/android__cert/shaibu/shaibu.jks')
             keyAlias 'shaibu'
             keyPassword 'shaibu'
             storePassword 'shaibu'
@@ -130,10 +128,5 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
 
 
-    implementation platform('com.google.firebase:firebase-bom:28.4.2')
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-messaging-ktx'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx'
-    
 
 }
