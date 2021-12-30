@@ -47,7 +47,9 @@ Clone this repository and import into Android Studio
 git clone https://github.com/terewere/tada-shop.git
 ```
 
-
+### Run 
+- Apk Link https://github.com/terewere/tada-shop/blob/main/app/release/app-release.apk
+- The signed apk can be installed on android devices with minSdkVersion of 16.
 
 ## Built With
 - Kotlin
