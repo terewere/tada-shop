@@ -1,14 +1,11 @@
-package com.kasa.products
+package com.kasa.cart
 
-import android.util.Log
 import android.util.Log.i
 import com.kasa.databases.DB
 import com.kasa.models.CartItem
-import com.kasa.models.CartItemWithProduct
 import com.kasa.utils.Constants
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
@@ -63,8 +60,6 @@ class ShoppingCart
 
 
     val getTotalAmount: Flow<Double> = db.getCartDao().allItems().map {
-        i("testing", "getTotalAmount")
-        i("testing", it.toString())
         it.map {
             it.product.price!!.times(it.cartItem.quantity)
         }.reduce { acc, d -> acc.plus(d)  }
@@ -72,7 +67,8 @@ class ShoppingCart
 
 
 
-    val getItemsCount: Flow<Int> = db.getCartDao().getItemsCount()
+    val getItemsCountFlow: Flow<Int> = db.getCartDao().getItemsCount()
+    suspend fun getItemsCount() = db.getCartDao().getItemsCount().first()
 
 
     /**

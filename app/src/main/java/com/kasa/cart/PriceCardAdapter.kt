@@ -1,9 +1,7 @@
-package com.kasa.products
+package com.kasa.cart
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.ExperimentalPagingApi
 import androidx.recyclerview.widget.RecyclerView
 import com.kasa.R
 import com.kasa.databinding.LayoutPriceCardBinding

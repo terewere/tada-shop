@@ -77,8 +77,6 @@ class PriceShareBottomSheet constructor(
 
             val price = product.price!!
 
-//            Toast.makeText(context, "${price} sharing... ", Toast.LENGTH_SHORT).show()
-
             mSlider!!.valueTo = price.toFloat()
 
             mSlider!!.addOnChangeListener(Slider.OnChangeListener { slider, value, fromUser ->

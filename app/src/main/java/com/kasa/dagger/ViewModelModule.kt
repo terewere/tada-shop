@@ -7,6 +7,7 @@ import androidx.paging.ExperimentalPagingApi
 import com.kasa.ViewModelFactory
 import com.kasa.account.OrdersViewModel
 import com.kasa.auth.AuthViewModel
+import com.kasa.cart.CartViewModel
 import com.kasa.category.CategoryViewModel
 import com.kasa.products.ProductViewModel
 import dagger.Binds
@@ -27,7 +28,14 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(CategoryViewModel::class)
-    abstract fun bindCategoryViewModel(updateProfileViewModel: CategoryViewModel): ViewModel
+    abstract fun bindCategoryViewModel(viewModel: CategoryViewModel): ViewModel
+
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CartViewModel::class)
+    abstract fun bindCartViewModel(cartViewModel: CartViewModel): ViewModel
 
 
 

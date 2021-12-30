@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<account-authenticator
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accountType="com.susumate.syncaccount"
-    android:icon="@mipmap/ic_launcher_round"
-    android:smallIcon="@mipmap/ic_launcher_round"
-    android:accountPreferences="@xml/synsettings"
-    android:label="@string/app_name"/>

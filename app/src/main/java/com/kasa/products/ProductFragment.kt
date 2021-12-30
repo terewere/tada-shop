@@ -34,9 +34,6 @@ import javax.inject.Inject
 class ProductFragment : Fragment(),
     Injectable, ProductListAdapter.OnItemClickListener {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
 
     private val viewModel: ProductViewModel by navGraphViewModels(R.id.mobile_navigation)
 
@@ -143,11 +140,6 @@ class ProductFragment : Fragment(),
     }
 
 
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = ProductFragment()
-    }
 
     override fun onItemClicked(productWithImages: ProductWithImages) {
         val bundle = bundleOf(

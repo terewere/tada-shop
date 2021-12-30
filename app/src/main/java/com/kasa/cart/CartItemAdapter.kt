@@ -1,4 +1,4 @@
-package com.kasa.products
+package com.kasa.cart
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.kasa.databinding.CartListItemBinding
 import com.kasa.models.CartItemWithProduct
 import com.squareup.picasso.Picasso
 
-class CartItemAdapter(private val listener: OnClickListener )
+class CartItemAdapter(private val listener: OnClickListener)
 	:RecyclerView.Adapter<CartItemAdapter.ViewHolder>() {
 
 

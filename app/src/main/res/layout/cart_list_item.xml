@@ -54,28 +54,14 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:background="@drawable/round_button"
-            android:backgroundTint="#FFFFFF"
-            android:contentDescription="DEL"
+            app:backgroundTint="@color/gray_light"
+            android:contentDescription="@string/delete_cart_item"
             android:scaleType="center"
             app:layout_constraintBottom_toBottomOf="@+id/cart_product_title_tv"
-            app:layout_constraintEnd_toStartOf="@+id/cart_product_delete_btn"
             app:layout_constraintTop_toTopOf="@+id/cart_product_title_tv"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_cart" />
+            app:srcCompat="@drawable/ic_delete" />
 
-        <ImageButton
-            android:id="@+id/cart_product_delete_btn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/round_button"
-            android:contentDescription="@string/check_out"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="@+id/cart_product_like_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cart_product_like_btn"
-            app:srcCompat="@drawable/ic_share"
-            app:tint="@color/gray_light" />
 
         <TextView
             android:id="@+id/cart_product_price_tv"

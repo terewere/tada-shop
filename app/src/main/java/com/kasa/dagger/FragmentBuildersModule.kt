@@ -4,6 +4,7 @@ import androidx.paging.ExperimentalPagingApi
 import com.kasa.SplashFragment
 import com.kasa.account.OrdersFragment
 import com.kasa.auth.*
+import com.kasa.cart.CartFragment
 import com.kasa.category.CategoryFragment
 import com.kasa.home.HomeFragment
 import com.kasa.products.ProductDetailFragment
@@ -39,6 +40,12 @@ abstract class FragmentBuildersModule {
     @ExperimentalPagingApi
     @ContributesAndroidInjector
     abstract fun contributeHomeFragment(): HomeFragment
+
+
+
+    @ContributesAndroidInjector
+    abstract fun contributeCartFragment(): CartFragment
+
 
     @ContributesAndroidInjector
     abstract fun contributeAccountFragment(): OrdersFragment

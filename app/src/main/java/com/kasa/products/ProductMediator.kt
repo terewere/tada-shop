@@ -20,14 +20,11 @@ class ProductMediator
      constructor(
         private val apiService: ApiService,
         private val appDatabase: DB,
-        private val categoryId: Int,
+        private val categoryId: Int? = null,
         ) :
     RemoteMediator<Int, ProductWithImages>() {
 
     override suspend fun initialize(): InitializeAction {
-        // Require that remote REFRESH is launched on initial load and succeeds before launching
-        // remote PREPEND / APPEND.
-        i("testing", "REFFRESHHHH");
         return InitializeAction.LAUNCH_INITIAL_REFRESH
     }
 
@@ -46,14 +43,14 @@ class ProductMediator
         }
 
         try {
-            val response = apiService.getProducts( state.config.pageSize,categoryId, page)
+            val response = apiService.getProducts( state.config.pageSize, page, categoryId)
 
-           // i("testing", response.toString());
+            i("testing", "RECEIVED");
+            i("testing", response.toString());
 //            i("testing", response.size.toString());
 //            i("testing", response[0].item.label);
 //            val isEndOfList = response.isEmpty()
             val isEndOfList = response.size < state.config.pageSize
-            i("testing",  "isEndOfList: ${isEndOfList} ")
 
             appDatabase.withTransaction {
 

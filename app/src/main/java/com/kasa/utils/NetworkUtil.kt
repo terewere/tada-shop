@@ -36,20 +36,4 @@ object NetworkUtil {
     }
 
 
-    fun convertErrors(response: ResponseBody): ApiError? {
-        val retrofitBuilder = RetrofitBuilder()
-        val converter: Converter<ResponseBody, ApiError> =
-            retrofitBuilder.retrofit.responseBodyConverter(
-                ApiError::class.java, arrayOfNulls<Annotation>(0)
-            )
-        var apiError: ApiError? = null
-        try {
-            apiError = converter.convert(response)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return apiError
-    }
-
-
 }

@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="320dp"
         android:layout_margin="16dp"
         android:importantForAccessibility="no"
-        android:src="@drawable/welcome"
+        android:src="@drawable/welcome_img"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,20 +42,6 @@
         app:layout_constraintBottom_toTopOf="@+id/welcome_continue_button"
         app:layout_constraintEnd_toEndOf="@+id/welcome_continue_button"
         app:layout_constraintStart_toStartOf="@+id/welcome_continue_button" />
-
-<!--    <com.dd.CircularProgressButton-->
-<!--        android:id="@+id/welcome_continue_button"-->
-<!--        style="@style/Button.Registration"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="17dp"-->
-<!--        app:cpb_textIdle="@string/RegistrationActivity_continue"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/welcome_transfer_or_restore"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_goneMarginBottom="@dimen/registration_button_bottom_margin" />-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/welcome_continue_button"

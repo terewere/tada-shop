@@ -54,6 +54,24 @@ constructor(
         ).flow
     }
 
+    fun getAllProducts(): Flow<PagingData<ProductWithImages>> {
+
+        val pagingSourceFactory = { appDatabase.productDao().getAllProducts() }
+
+        return Pager(
+            config = getDefaultPageConfig(),
+            remoteMediator = ProductMediator(apiService, appDatabase),
+            pagingSourceFactory = pagingSourceFactory
+
+        ).flow
+    }
+
+    fun getMessages(): Flow<PagingData<ProductWithImages>> {
+        return Pager(
+            config = getDefaultPageConfig(),
+            pagingSourceFactory = { ProductPagingSource(apiService) }
+        ).flow
+    }
 
     suspend fun getHomeSlides() =  apiService.getHomeSlides()
 

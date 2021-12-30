@@ -9,8 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 
-fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View =
-        LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 
 var View.visible: Boolean
     get() = visibility == View.VISIBLE
@@ -19,9 +17,6 @@ var View.visible: Boolean
     }
 
 
-fun dpToPx(context: Context, dp: Int): Int {
-    return (dp * context.resources.displayMetrics.density + 0.5).toInt()
-}
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable?) {

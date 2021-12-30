@@ -5,11 +5,9 @@ import androidx.lifecycle.*
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.cachedIn
 import com.kasa.auth.ApiResult
-import com.kasa.models.Order
-import com.kasa.models.ProductWithImages
+import com.kasa.cart.ShoppingCart
 import com.kasa.utils.Constants
 import kotlinx.coroutines.launch
-import java.text.ParseException
 import javax.inject.Inject
 
 
@@ -29,6 +27,7 @@ constructor(
     var slides: LiveData<ApiResult<List<String>>> = _slides
 
     fun getProducts(categoryId: Int) = repo.getProducts(categoryId).cachedIn(viewModelScope)
+    fun getAllProducts() = repo.getAllProducts().cachedIn(viewModelScope)
 
 
     fun addProfit( profit: Float) {
@@ -47,17 +46,8 @@ constructor(
     }
 
 
-    fun getCartItems() = cart.itemsInCart
-
-
-    suspend fun getItemsCountFlow() = cart.getItemsCount
-    suspend fun getTotalAmount() = cart.getTotalAmount
 
     suspend fun incrementItemInCart(productId: Long) = cart.incrementItemInCart(productId)
-    suspend fun decrementItemInCart(productId: Long) = cart.decrementItemInCart(productId)
-    suspend fun itemsInCart() = cart.itemsInCart()
-    suspend fun empty() = cart.empty()
-
 
 
     fun getHomeSlides() {
@@ -67,7 +57,7 @@ constructor(
 
                 val slides = repo.getHomeSlides()
 
-                Log.i(Constants.TAG, slides.toString())
+               // Log.i(Constants.TAG, slides.toString())
 
                 _slides.postValue(ApiResult(success = slides ))
 

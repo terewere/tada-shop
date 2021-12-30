@@ -11,14 +11,9 @@ object Constants {
     const val API_URL = "${BASE_URL}/api/"
 
     const val DB_NAME = "tada.db"
-    const val DB_PATH = "database/${DB_NAME}"
-
-    const val SEARCH_QUERY = "SEARCH_QUERY"
-    const val SUCCESS = "success"
-    const val PREF_NAME = "PREF_NAME"
-    const val PREF_LAST_FRAGMENT_TAG = "PREF_LAST_FRAGMENT_TAG"
     const val ARG_CATEGORY = "ARG_CATEGORY"
     const val ARG_PRODUCT = "ARG_PRODUCT"
+    const val SUCCESS = "SUCCESS"
 
     //user
     const val USER_ID = "USER_ID"

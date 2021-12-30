@@ -11,10 +11,8 @@
 
     <application
         android:name=".App"
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_adaptive_fore"
         android:label="@string/app_name"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_adaptive_fore"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kasa">

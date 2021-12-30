@@ -40,4 +40,57 @@
             android:padding="4dp" />
     </androidx.cardview.widget.CardView>
 
+
+    <LinearLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+        <TextView
+            android:id="@+id/tvAllProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24.0sp"
+            android:layout_marginTop="@dimen/dp_16"
+            android:fontFamily="@font/nunito_sans_extra_bold"
+            android:paddingBottom="@dimen/dp_16"
+            android:text="@string/all_products"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18.0sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_16"
+            android:overScrollMode="always"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".products.ProductFragment"
+            tools:showIn="@layout/fragment_product"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:id="@+id/recyclerviewProducts"
+            android:padding="@dimen/item_margin"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loading"
+            tools:listitem="@layout/fragment_product" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

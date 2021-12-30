@@ -148,6 +148,9 @@
     <string name="menu_account">Account</string>
     <string name="menu_orders">Orders</string>
     <string name="shopping_cart_icon">shopping cart icon</string>
+    <string name="delete_cart_item">Delete cart item</string>
+    <string name="all_products">All products</string>
+    <string name="description">DESCRIPTION</string>
 
 
 </resources>

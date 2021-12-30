@@ -30,8 +30,8 @@ interface ApiService {
     @GET("products")
     suspend fun getProducts(
         @Query("length") length: Int,
-        @Query("category_id") categoryId: Int,
-        @Query("page") page: Int
+        @Query("page") page: Int,
+        @Query("category_id") categoryId: Int?
     ): List<ProductWithImages>
 
 

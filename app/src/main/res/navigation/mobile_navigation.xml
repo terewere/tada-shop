@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/nav_cart"
         android:label="@string/menu"
-        android:name="com.kasa.products.CartFragment"
+        android:name="com.kasa.cart.CartFragment"
         tools:layout="@layout/fragment_cart" />
 
 <!--    //AUTHENTICATION-->

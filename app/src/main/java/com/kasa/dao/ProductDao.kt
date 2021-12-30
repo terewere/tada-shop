@@ -12,6 +12,10 @@ interface ProductDao {
     @Query("SELECT * FROM Product where categoryId = :categoryId")
     fun getProducts(categoryId: Int): PagingSource<Int, ProductWithImages>
 
+    @Transaction
+    @Query("SELECT * FROM Product")
+    fun getAllProducts(): PagingSource<Int, ProductWithImages>
+
 
     @Transaction
     suspend fun insertProducts(list:List<ProductWithImages>, keys: List<RemoteKeys>) {
@@ -57,7 +61,7 @@ interface ProductDao {
     }
 
     @Query("DELETE from Product where categoryId = :categoryId")
-    fun clearByCatId(categoryId: Int)
+    fun clearByCatId(categoryId: Int?)
 }
 
 

@@ -44,6 +44,7 @@
         <entry key="app/src/main/res/drawable/lock_icon.xml" value="0.14722222222222223" />
         <entry key="app/src/main/res/drawable/pending_text.xml" value="0.190625" />
         <entry key="app/src/main/res/drawable/progress_animation.xml" value="0.146875" />
+        <entry key="app/src/main/res/drawable/remove_circle_primary.xml" value="0.15833333333333333" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.14722222222222223" />
         <entry key="app/src/main/res/drawable/view_scroller_bottom_sheet.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout-v21/fragment_registration_welcome.xml" value="0.1" />
@@ -61,13 +62,13 @@
         <entry key="app/src/main/res/layout/fragment_create_account_detail.xml" value="0.27552986512524086" />
         <entry key="app/src/main/res/layout/fragment_create_account_list.xml" value="0.182648401826484" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.27037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.11" />
         <entry key="app/src/main/res/layout/fragment_message.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_new_account.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_new_account_list.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/fragment_product_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_registration_country_picker.xml" value="0.28933362801226586" />
-        <entry key="app/src/main/res/layout/fragment_registration_welcome.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_registration_welcome.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_share_product_dialog_list_dialog.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.27037037037037037" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.14427083333333332" />

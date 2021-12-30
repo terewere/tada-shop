@@ -1,4 +1,4 @@
-package com.kasa.products
+package com.kasa.cart
 
 import android.os.Bundle
 import android.util.Log
@@ -6,28 +6,29 @@ import android.util.Log.i
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.navGraphViewModels
-import androidx.paging.ExperimentalPagingApi
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.kasa.R
+import com.kasa.dagger.Injectable
 import com.kasa.databinding.FragmentCartBinding
-import com.kasa.models.CartItem
-import com.kasa.models.CartItemWithProduct
 import com.kasa.utils.Constants.TAG
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-@ExperimentalPagingApi
-class CartFragment : Fragment() {
+class CartFragment : Fragment(), Injectable {
 
 	private lateinit var binding: FragmentCartBinding
 
-	private val viewModel: ProductViewModel by navGraphViewModels(R.id.mobile_navigation)
+	@Inject
+	lateinit var viewModelFactory: ViewModelProvider.Factory
+
+
+	private lateinit var viewModel: CartViewModel
 
 	private lateinit var concatAdapter: ConcatAdapter
 
@@ -44,6 +45,8 @@ class CartFragment : Fragment() {
 				override fun onMinusClick(itemId: Long, currQuantity: Long) {
 					viewLifecycleOwner.lifecycleScope.launch {
 
+						//TODO: app crashinng when value is 0
+						if (viewModel.getItemsCount() <=1) findNavController().popBackStack()
 						viewModel.decrementItemInCart(itemId)
 					}
 					Log.d(TAG, "onMinus: decreasing quantity")
@@ -64,25 +67,21 @@ class CartFragment : Fragment() {
 		binding = FragmentCartBinding.inflate(layoutInflater)
 
 		setViews()
+
+		viewModel = ViewModelProvider(this, viewModelFactory).get(CartViewModel::class.java)
+
 		setObservers()
 		getCartItems()
 
 		return binding.root
 	}
 
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-		//viewModel.getCartItems()
-	}
 
 	private fun setViews() {
-		//binding.loaderLayout.circularLoader.showAnimationBehavior
-		//binding.cartAppBar.topAppBar.title = getString(R.string.cart_fragment_label)
 		binding.cartEmptyTextView.visibility = View.GONE
 		binding.cartCheckOutBtn.setOnClickListener {
-			//navigateToSelectAddress()
+			navigateToSelectAddress()
 		}
-			//setItemsAdapter(viewModel.cartItems.value)
 			concatAdapter = ConcatAdapter(itemsAdapter, priceCardAdapter)
 			binding.cartProductsRecyclerView.adapter = concatAdapter
 
@@ -92,7 +91,6 @@ class CartFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getItemsCountFlow().distinctUntilChanged().collectLatest {
-               // i("testing", it.toString())
                 priceCardAdapter.setItemsCountFlow(it)
             }
 
@@ -112,13 +110,10 @@ class CartFragment : Fragment() {
 	fun getCartItems(){
 		viewLifecycleOwner.lifecycleScope.launch {
 			viewModel.getCartItems().distinctUntilChanged().collectLatest {
-				 i("testing", it.toString())
 
-				if (it == null || it.isEmpty()) {
+				if ( it.isEmpty()) {
 					binding.cartEmptyTextView.visibility = View.VISIBLE
 				}  else {
-					i("testing", "DDONNT CALLLLLLL ME")
-
 					itemsAdapter.submitData(it)
 				}
 
@@ -130,8 +125,9 @@ class CartFragment : Fragment() {
 
 
 
-//	private fun navigateToSelectAddress() {
-//		findNavController().navigate(R.id.action_cartFragment_to_selectAddressFragment)
-//	}
+	private fun navigateToSelectAddress() {
+		            Toast.makeText(context, "Not implement yet... ", Toast.LENGTH_SHORT).show()
+
+	}
 
 }
