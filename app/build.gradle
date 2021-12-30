@@ -8,19 +8,12 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('/Users/sourcecode/Dropbox/android__cert/shaibu/shaibu.jks')
-            keyAlias 'shaibu'
-            keyPassword 'shaibu'
-            storePassword 'shaibu'
-        }
-    }
+
     compileSdkVersion 31
 //    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.susumate"
+        applicationId "com.tada"
         minSdkVersion 17
         targetSdkVersion 31
         multiDexEnabled true
@@ -28,7 +21,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.release
     }
 
     buildFeatures {

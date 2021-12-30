@@ -22,5 +22,5 @@
 
 
 
- -keep public class com.kasa.models.* {*;}
+ -keep public class com.tada.models.* {*;}
 

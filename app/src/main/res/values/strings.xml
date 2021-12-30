@@ -5,8 +5,6 @@
 
 <resources>
     <string name="app_name">&appname;</string>
-    <string name="RegistrationActivity_needs_access_to_your_contacts_and_media_in_order_to_connect_with_friends">&appname; needs access to your contacts and media in order to connect with friends, exchange messages, and make secure calls</string>
-    <string name="RegistrationActivity_needs_access_to_your_contacts_in_order_to_connect_with_friends">&appname; needs access to your contacts in order to connect with friends, exchange messages, and make secure calls</string>
     <string name="action_settings">Settings</string>
     <string name="hint_enter_a_message">Type a message…</string>
 
@@ -17,22 +15,12 @@
     <string name="menu_deposits">Calls</string>
     <string name="menu_accounts">Accounts</string>
     <string name="menu_new_account">New Account</string>
-    <string name="default_notification_channel_id">3</string>
-    <string name="msg_token_fmt" formatted="true"> %s</string>
-
-    <string-array name="view_types_dialog">
-        <item name="image">Image (default)</item>
-        <item name="voice">Voice message (custom)</item>
-    </string-array>
-
 
 
     <string name="loading">loading…please wait</string>
     <string name="loading_short">Loading…</string>
-    <string name="we_will_send_a_confirmation_code_to_your_phone">You will receive a verification code. Carrier rate may apply.</string>
     <string name="carrier_rate">Carrier rate may apply.</string>
     <string name="next">Next</string>
-    <string name="_233">+233</string>
     <string name="phone_number">Phone Number</string>
     <string name="country">Country</string>
     <string name="_244300000">Phone number</string>
@@ -68,42 +56,13 @@
     <string name="logout">Log out</string>
     <string name="user_first_name">First name</string>
     <string name="user_last_name">Last name (optional)</string>
-    <string name="start_chat">start chat</string>
 
-
-    <string name="RegistrationActivity_take_privacy_with_you_be_yourself_in_every_message">Take privacy with you.\nBe yourself in every message.</string>
-    <string name="RegistrationActivity_terms_and_privacy">Terms &amp; Privacy Policy</string>
-    <string name="registration_activity__transfer_or_restore_account">Transfer or restore account</string>
-
-    <string name="RegistrationActivity_select_your_country">Select your country</string>
-    <string name="country_selection_fragment__search">Search</string>
-    <string name="country_selection_fragment__loading_countries">Loading countries…</string>
-    <string name="country_selection_fragment__no_matching_countries">No matching countries</string>
-    <string name="RegistrationActivity_you_must_specify_your_country_code">You must specify your country code</string>
-    <string name="RegistrationActivity_you_must_specify_your_phone_number">You must specify your phone number</string>
-    <string name="RegistrationActivity_invalid_number">Invalid number</string>
-    <string name="RegistrationActivity_the_number_you_specified_s_is_invalid">The number you specified is invalid</string>
-    <string name="RegistrationActivity_a_verification_code_will_be_sent_to">A verification code will be sent to</string>
-    <string name="RegistrationActivity_edit_number">Edit number</string>
-    <string name="RegistrationActivity_is_your_phone_number_above_correct">Is your phone number above correct?</string>
-    <string name="Permissions_permission_required">Permission required</string>
-    <string name="Permissions_continue">Continue</string>
-    <string name="Permissions_not_now">Not now</string>
-    <string name="contact_selection_activity__new_group">New group</string>
     <string name="group_name">Account Name</string>
     <string name="create_group">Create Account</string>
     <string name="please_provide_a_group_name_and_optional_group_icon">Please provide a account name and optional account icon</string>
     <string name="at_least_1_contact_must_be_selected">At least 1 contact must be selected</string>
     <string name="menu_select_contact">Select contact</string>
-    <string name="add_participant">Add participants</string>
-    <string name="add_subject">add Subject</string>
-    <string name="__participants" formatted="true">Participants: %s</string>
-    <string name="__of_500_selected" formatted="true">%s of 500 selected</string>
-    <string name="provide_group_subject">Provide group subject and optional group icon</string>
-<!--    <string name="last_seen" formatted="true">last seen %s %s at %s </string>-->
-    <string name="last_seen">last seen %1$s at %2$s</string>
-    <string name="last_seen_date">last seen %1$s</string>
-    <string name="is_typing" >%s is typing…</string>
+
     <string name="price" >¢%s</string>
     <string name="profit" >"You've added ¢%s profit</string>
     <string name="retry">retry</string>
@@ -151,6 +110,9 @@
     <string name="delete_cart_item">Delete cart item</string>
     <string name="all_products">All products</string>
     <string name="description">DESCRIPTION</string>
+    <string name="continue_btn">Continue</string>
+    <string name="transfer_account">transfer account</string>
+    <string name="terms_privacy_policy"><![CDATA[Terms & Privacy Policy]]></string>
 
 
 </resources>

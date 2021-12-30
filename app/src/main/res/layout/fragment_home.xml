@@ -30,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.kasa.utils.PagerIndicatorView
+        <com.tada.utils.PagerIndicatorView
             android:id="@+id/page_indicator"
             android:layout_width="match_parent"
             android:layout_height="16dp"

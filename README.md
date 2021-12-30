@@ -58,6 +58,7 @@ git clone https://github.com/terewere/tada-shop.git
 - Dagger 2
 - Material
 - Picasso
+- Retrofit
 
 ### BACKEND
 - url - https://ks.ownaradio.com/api

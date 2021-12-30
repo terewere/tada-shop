@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_splash"
-        android:name="com.kasa.SplashFragment"
+        android:name="com.tada.SplashFragment"
         tools:layout="@layout/fragment_splash">
 
         <action
@@ -24,58 +24,58 @@
     </fragment>
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.kasa.home.HomeFragment"
+        android:name="com.tada.home.HomeFragment"
         tools:layout="@layout/fragment_home">
     </fragment>
 
     <fragment
         android:id="@+id/nav_categories"
-        android:name="com.kasa.category.CategoryFragment"
+        android:name="com.tada.category.CategoryFragment"
         android:label="@string/menu_categories"
         tools:layout="@layout/fragment_category" />
 
     <fragment
         android:id="@+id/nav_feed"
         android:label="@string/menu_feed"
-        android:name="com.kasa.feed.FeedFragment"
+        android:name="com.tada.feed.FeedFragment"
         tools:layout="@layout/fragment_feed">
     </fragment>
 
     <fragment
         android:id="@+id/nav_wallet"
         android:label="@string/menu_wallet"
-        android:name="com.kasa.wallet.WalletFragment"
+        android:name="com.tada.wallet.WalletFragment"
         tools:layout="@layout/fragment_wallet">
     </fragment>
     <fragment
         android:id="@+id/nav_orders"
         android:label="@string/menu_orders"
-        android:name="com.kasa.account.OrdersFragment"
+        android:name="com.tada.account.OrdersFragment"
         tools:layout="@layout/fragment_orders">
     </fragment>
 
     <fragment
         android:id="@+id/nav_products"
-        android:name="com.kasa.products.ProductFragment"
+        android:name="com.tada.products.ProductFragment"
         tools:layout="@layout/fragment_product" />
 
 
     <fragment
         android:id="@+id/nav_product_detail"
-        android:name="com.kasa.products.ProductDetailFragment"
+        android:name="com.tada.products.ProductDetailFragment"
         tools:layout="@layout/fragment_product" />
 
     <fragment
         android:id="@+id/nav_cart"
         android:label="@string/menu"
-        android:name="com.kasa.cart.CartFragment"
+        android:name="com.tada.cart.CartFragment"
         tools:layout="@layout/fragment_cart" />
 
 <!--    //AUTHENTICATION-->
     <fragment
         android:id="@+id/nav_welcome"
         android:label="welcome"
-        android:name="com.kasa.auth.WelcomeFragment"
+        android:name="com.tada.auth.WelcomeFragment"
         tools:layout="@layout/fragment_registration_welcome" >
 
         <action
@@ -86,7 +86,7 @@
 
     <fragment
         android:id="@+id/nav_login"
-        android:name="com.kasa.auth.LoginFragment"
+        android:name="com.tada.auth.LoginFragment"
         android:label="verify phone"
         tools:layout="@layout/fragment_sign_in">
 
@@ -106,7 +106,7 @@
 
     <fragment
         android:id="@+id/nav_register"
-        android:name="com.kasa.auth.RegisterFragment"
+        android:name="com.tada.auth.RegisterFragment"
         android:label="register"
         tools:layout="@layout/fragment_register">
         <action
