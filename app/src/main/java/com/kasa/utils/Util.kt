@@ -5,11 +5,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Environment
 import android.telephony.TelephonyManager
 import android.text.TextUtils
 import android.util.Log
 import androidx.annotation.RequiresPermission
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -17,6 +19,10 @@ import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber
 import com.kasa.utils.Constants.TAG
 import java.io.File
 import java.io.FileOutputStream
+import androidx.core.content.ContextCompat.startActivity
+
+
+
 
 
 object Util {
@@ -48,12 +54,8 @@ object Util {
 
 
     fun shareProduct(context: Context,message:String, file: File){
-
-
         val uri = FileProvider.getUriForFile(context, "com.tada.provider", file)
-        //FileProvider authorities from Manifest
 
-        //FileProvider authorities from Manifest
         val sharingIntent = Intent(Intent.ACTION_SEND)
         sharingIntent.type = "*/*"
         sharingIntent.putExtra( Intent.EXTRA_TEXT,message);
@@ -62,7 +64,6 @@ object Util {
         context.startActivity(sharingIntent)
 //        context.startActivity(Intent.createChooser( sharingIntent, "Share using"))
     }
-
 
     fun getLocalBitmapUri(context: Context, bmp: Bitmap, title: String) : File {
 
@@ -85,4 +86,22 @@ object Util {
     }
 
 
+    fun trackOrderInfo(context: Context, orderId: String){
+        val phoneNumberWithCountryCode = "+233243270000"
+
+        val message = "I would like to check the status of my order ${orderId}"
+
+        context.startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse(
+                    String.format(
+                        "https://api.whatsapp.com/send?phone=%s&text=%s",
+                        phoneNumberWithCountryCode,
+                        message
+                    )
+                )
+            )
+        )
+    }
 }

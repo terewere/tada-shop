@@ -23,6 +23,7 @@ import com.kasa.models.ProductWithImages
 import com.kasa.utils.Constants
 import com.kasa.utils.Constants.ARG_CATEGORY
 import com.kasa.utils.Constants.ARG_PRODUCT
+import com.kasa.utils.extentions.hideKeyboard
 import com.kasa.utils.extentions.setTitle
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -122,6 +123,7 @@ class ProductFragment : Fragment(),
         viewLifecycleOwner.lifecycleScope.launch {
             listAdapter.loadStateFlow.collectLatest { loadStates ->
                 binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
+                binding.loading.circularLoader.isVisible = loadStates.refresh is LoadState.Loading
 //                binding.retryButton.isVisible = loadStates.refresh !is LoadState.Loading
 //                binding.errorMsg.isVisible = loadStates.refresh is LoadState.Error
             }

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:focusableInTouchMode="true"
     android:background="@color/non_square_icon_background"
 
     android:fitsSystemWindows="false"
@@ -28,6 +30,7 @@
                 android:theme="@style/EditTextHint"
                 android:background="@drawable/big_bg_white"
                 android:layout_width="wrap_content"
+                android:focusable="false"
                 android:layout_height="wrap_content"
                 app:searchIcon="@drawable/ic_search_black"
 
@@ -56,7 +59,7 @@
 
         app:labelVisibilityMode="labeled"
         app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
-        app:menu="@menu/activity_main_drawer"
+        app:menu="@menu/bottom_menu"
         tools:showIn="@layout/activity_main" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:tag="layout/fragment_sign_up_0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@id/linearLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="200.0dip"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60.0dip"
+                    android:layout_margin="18.0dip"
+                    android:scaleType="fitEnd" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28.0dip"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="24.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28.0dip"
+                    android:layout_marginEnd="30.0dip"
+                    android:layout_marginBottom="10.0dip"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/sign_in_text"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/linearLayout"
+            app:layout_constraintStart_toStartOf="@id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30.0dip"
+                android:layout_marginTop="30.0dip"
+                android:layout_marginEnd="30.0dip"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/enter_your_phone_number"
+                android:textColor="@color/secondary_text"
+                android:textSize="16.0sp" />
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TI_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="fill_parent"
+                android:layout_height="61.0dip"
+                android:layout_marginStart="30.0dip"
+                android:layout_marginTop="15.0dip"
+                android:layout_marginEnd="30.0dip"
+                android:hint="@string/phone_number"
+                app:prefixText="+233"
+                android:textColorHint="@color/colorPrimaryDark"
+                app:boxStrokeColor="@color/secondary_text"
+                app:startIconDrawable="@drawable/ic_phone">
+                <requestFocus/>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TE_phoneNumber"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:textColor="@color/colorPrimaryDark" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signup_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30.0dip"
+                android:layout_marginTop="30.0dip"
+                android:layout_marginEnd="30.0dip"
+                android:background="@color/colorAccentLight"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="15.0sp" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/circularIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/TV_have_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/already_have_an_account_sign_up"
+                android:textColor="@color/secondary_text"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/signup_btn"
+                app:layout_constraintStart_toStartOf="@id/signup_btn"
+                app:layout_constraintTop_toBottomOf="@id/signup_btn" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="679.0dip" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

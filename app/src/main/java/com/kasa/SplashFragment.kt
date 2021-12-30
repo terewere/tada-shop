@@ -9,11 +9,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.appcompat.app.AppCompatActivity
+import com.kasa.dagger.Injectable
+import com.kasa.network.TokenManager
+import javax.inject.Inject
 
 
+class SplashFragment : Fragment(), Injectable {
 
 
-class SplashFragment : Fragment() {
+    @Inject
+    lateinit var tokenManager: TokenManager
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_splash, container, false)
@@ -23,7 +29,12 @@ class SplashFragment : Fragment() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             context?.let {
-                findNavController().navigate(R.id.action_nav_splash_to_nav_home)
+
+                if (tokenManager.accessToken == null) {
+                    findNavController().navigate(R.id.nav_welcome)
+                }else{
+                    findNavController().navigate(R.id.action_nav_splash_to_nav_home)
+                }
             }
         }, 200)
     }

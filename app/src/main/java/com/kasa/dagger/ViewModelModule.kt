@@ -5,9 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.ExperimentalPagingApi
 import com.kasa.ViewModelFactory
-import com.kasa.auth.UpdateProfileViewModel
-import com.kasa.auth.VerifyPhoneViewModel
-import com.kasa.auth.VerifyTokenViewModel
+import com.kasa.account.OrdersViewModel
+import com.kasa.auth.AuthViewModel
 import com.kasa.category.CategoryViewModel
 import com.kasa.products.ProductViewModel
 import dagger.Binds
@@ -19,20 +18,11 @@ import javax.inject.Singleton
 abstract class ViewModelModule {
 
 
-    @Binds
-    @IntoMap
-    @ViewModelKey(VerifyPhoneViewModel::class)
-    abstract fun bindVerifyPhoneViewModel(verifyPhoneViewModel: VerifyPhoneViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(VerifyTokenViewModel::class)
-    abstract fun bindVerifyTokenViewModel(verifyTokenViewModel: VerifyTokenViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(UpdateProfileViewModel::class)
-    abstract fun bindRegisterViewModel(updateProfileViewModel: UpdateProfileViewModel): ViewModel
+    @ViewModelKey(AuthViewModel::class)
+    abstract fun bindRegisterViewModel(authViewModel: AuthViewModel): ViewModel
 
     @Binds
     @IntoMap
@@ -46,6 +36,12 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ProductViewModel::class)
     abstract fun bindShopViewModel(viewModel: ProductViewModel): ViewModel
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(OrdersViewModel::class)
+    abstract fun bindOrdersViewModel(viewModel: OrdersViewModel): ViewModel
 
 
 

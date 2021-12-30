@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@id/nav_splash">
 
     <fragment
         android:id="@+id/nav_splash"
@@ -15,14 +15,18 @@
             app:destination="@id/nav_home"
             app:popUpTo="@id/nav_splash"
             app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_nav_splash_to_welcome"
+            app:destination="@id/nav_welcome"
+            app:popUpTo="@id/nav_splash"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.kasa.category.CategoryFragment"
-        tools:layout="@layout/fragment_category">
-
+        android:name="com.kasa.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
     </fragment>
-
 
     <fragment
         android:id="@+id/nav_categories"
@@ -30,6 +34,25 @@
         android:label="@string/menu_categories"
         tools:layout="@layout/fragment_category" />
 
+    <fragment
+        android:id="@+id/nav_feed"
+        android:label="@string/menu_feed"
+        android:name="com.kasa.feed.FeedFragment"
+        tools:layout="@layout/fragment_feed">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_wallet"
+        android:label="@string/menu_wallet"
+        android:name="com.kasa.wallet.WalletFragment"
+        tools:layout="@layout/fragment_wallet">
+    </fragment>
+    <fragment
+        android:id="@+id/nav_orders"
+        android:label="@string/menu_orders"
+        android:name="com.kasa.account.OrdersFragment"
+        tools:layout="@layout/fragment_orders">
+    </fragment>
 
     <fragment
         android:id="@+id/nav_products"
@@ -48,12 +71,6 @@
         android:name="com.kasa.products.CartFragment"
         tools:layout="@layout/fragment_cart" />
 
-    <fragment
-        android:id="@+id/nav_pickCountry"
-        android:name="com.kasa.auth.CountryPickerFragment"
-        android:label="Select Country"
-        tools:layout="@layout/fragment_registration_country_picker" />
-
 <!--    //AUTHENTICATION-->
     <fragment
         android:id="@+id/nav_welcome"
@@ -62,41 +79,48 @@
         tools:layout="@layout/fragment_registration_welcome" >
 
         <action
-            android:id="@+id/action_nav_welcome_to_nav_verify_phone"
-            app:destination="@id/nav_verify_phone" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_verify_phone"
-        android:name="com.kasa.auth.VerifyPhoneFragment"
-        android:label="verify phone"
-        tools:layout="@layout/verify_phone_fragment">
-        <action
-            android:id="@+id/action_nav_verify_phone_to_nav_verify_token"
-            app:destination="@id/nav_verify_token" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_verify_token"
-        android:name="com.kasa.auth.VerifyTokenFragment"
-        android:label="verify token"
-        tools:layout="@layout/verify_token_fragment">
-
-        <action
-            android:id="@+id/action_nav_verify_token_to_nav_register"
+            android:id="@+id/action_welcome_to_register"
             app:destination="@id/nav_register"
-            app:popUpTo="@id/nav_verify_phone" />
+            />
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.kasa.auth.LoginFragment"
+        android:label="verify phone"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/nav_register"
+            />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_splash"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_register"
-        android:name="com.kasa.auth.UpdateProfileFragment"
+        android:name="com.kasa.auth.RegisterFragment"
         android:label="register"
-        tools:layout="@layout/fragment_update_profile">
+        tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_nav_register_to_nav_home"
             app:destination="@id/nav_home"
-            app:popUpTo="@id/nav_home" />
+            app:popUpTo="@id/nav_splash"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_nav_register_to_login"
+            app:destination="@id/nav_login"
+
+            />
     </fragment>
 
 

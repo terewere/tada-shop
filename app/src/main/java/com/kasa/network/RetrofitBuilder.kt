@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.kasa.models.ProductWithImages
+import com.kasa.models.UserInfo
 import com.kasa.utils.Constants.API_URL
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

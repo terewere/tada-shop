@@ -2,7 +2,6 @@ package com.kasa.models
 
 
 import com.google.gson.annotations.SerializedName
-import com.kasa.entities.User
 
 
 class UserInfo {

@@ -19,7 +19,7 @@ class ProductRepository
 @Inject
 constructor(
     @Named("auth")
-    val doggoApiService: ApiService,
+    val apiService: ApiService,
     val appDatabase: DB,
     val context: Context,
     val appExecutors: AppExecutors
@@ -48,11 +48,15 @@ constructor(
 
         return Pager(
             config = getDefaultPageConfig(),
-            remoteMediator = ProductMediator(doggoApiService, appDatabase, categoryId),
+            remoteMediator = ProductMediator(apiService, appDatabase, categoryId),
             pagingSourceFactory = pagingSourceFactory
 
         ).flow
     }
+
+
+    suspend fun getHomeSlides() =  apiService.getHomeSlides()
+
 
 
 }

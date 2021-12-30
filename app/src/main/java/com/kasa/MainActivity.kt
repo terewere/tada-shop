@@ -2,41 +2,28 @@ package com.kasa
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log.i
+import android.os.StrictMode
+import android.os.StrictMode.VmPolicy
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.paging.ExperimentalPagingApi
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 import com.kasa.databinding.ActivityMainBinding
 import com.kasa.products.ProductViewModel
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.launch
 import javax.inject.Inject
-import android.os.StrictMode
-import android.os.StrictMode.VmPolicy
 
-
-//pkg: com.susumate -- hash: XKK0L9NjbFh
 
 @ExperimentalPagingApi
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
-    NavigationBarView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
 
     private lateinit var viewModel: ProductViewModel
@@ -44,10 +31,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
 
     private val appBarConfiguration by lazy {
         AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_categories, R.id.nav_categories
-            )
-        )
+            setOf( R.id.nav_home, R.id.nav_categories,R.id.nav_feed,R.id.nav_wallet,R.id.nav_orders))
     }
 
     @Inject
@@ -55,7 +39,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-
 
 
     private val navController by lazy { findNavController(R.id.nav_host_fragment) }
@@ -76,10 +59,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            view.setBackgroundResource(R.color.white)
-        }, 200)
-
 
         setupViewModel()
         setupUI()
@@ -97,6 +76,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
 
     }
 
+
+
     private fun setupViewModel() {
         try {
             val viewModelProvider = ViewModelProvider(
@@ -107,7 +88,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
         } catch (e: IllegalArgumentException) {
             //e.printStackTrace()
 
-            i("testing", e.localizedMessage)
         }
 
     }
@@ -117,8 +97,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
             NavigationUI.setupWithNavController(bottomNavView, navController)
         }
 
-        binding.bottomNavView.setOnItemSelectedListener(this)
-        navVisibility()
+        searchViewVisibility()
+        bottomNavVisibility()
 
     }
 
@@ -173,31 +153,33 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector,
 
     override fun supportFragmentInjector() = dispatchingAndroidInjector
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_home -> navController.navigate(R.id.nav_home)
-            R.id.nav_categories -> navController.navigate(R.id.nav_categories)
-//            R.id.nav_help -> navController.navigate(R.id.nav_help)
-//            R.id.nav_radio -> {
-//                startActivity(Intent(this, MainActivity::class.java))
-//                finish()
-//            }
-        }
-        return true
-    }
 
-    private fun navVisibility() {
+
+    private fun searchViewVisibility() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.nav_home,  R.id.nav_categories,R.id.nav_products  -> {
+                R.id.nav_home,  R.id.nav_categories,R.id.nav_products -> {
                     showSearchView()
+                }
+
+                else -> {
+                    hideSearchView()
+                }
+            }
+        }
+    }
+
+    private fun bottomNavVisibility() {
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.nav_home,  R.id.nav_categories,R.id.nav_feed,R.id.nav_wallet, R.id.nav_orders -> {
                     showBottomNav()
                 }
 
                 else -> {
                     hideBottomNav()
-                    hideSearchView()
                 }
             }
         }

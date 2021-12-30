@@ -9,7 +9,7 @@ import androidx.room.withTransaction
 import com.kasa.databases.DB
 import com.kasa.models.ProductWithImages
 import com.kasa.network.ApiService
-import com.kasa.paging3.RemoteKeys
+import com.kasa.models.RemoteKeys
 import com.kasa.products.ProductRepository.Companion.DEFAULT_PAGE_INDEX
 import retrofit2.HttpException
 import java.io.IOException

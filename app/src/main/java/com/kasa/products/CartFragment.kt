@@ -93,7 +93,7 @@ class CartFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getItemsCountFlow().distinctUntilChanged().collectLatest {
                // i("testing", it.toString())
-               // priceCardAdapter.setItemsCountFlow(it)
+                priceCardAdapter.setItemsCountFlow(it)
             }
 
         }
@@ -101,7 +101,7 @@ class CartFragment : Fragment() {
 
 		viewLifecycleOwner.lifecycleScope.launch {
 			viewModel.getTotalAmount().distinctUntilChanged().collectLatest {
-				//priceCardAdapter.setTotalAmount(it)
+				priceCardAdapter.setTotalAmount(it)
 			}
 		}
 

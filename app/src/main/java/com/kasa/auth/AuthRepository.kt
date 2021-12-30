@@ -1,8 +1,5 @@
 package com.kasa.auth
 
-import android.Manifest
-import androidx.annotation.RequiresApi
-import androidx.annotation.StringRes
 import com.kasa.network.ApiService
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
@@ -16,11 +13,9 @@ class AuthRepository @Inject constructor(
 
     var disposable: Disposable? = null
 
-    fun verifyPhone(number: String) = apiService.verifyPhone(number)
-    fun verifyToken(number: String, token: String) = apiService.verifyToken(number, token)
-    fun updateUser(firstName: String, lastName: String) = apiService.updateUser(firstName, lastName)
+    suspend fun register(firstName: String, lastName: String, email: String, phone: String) =
+        apiService.register(firstName, lastName, email,phone)
 
-//    fun saveToken(deviceId: String, token: String) = apiService.saveToken(deviceId = deviceId, token = token )
-
+   suspend fun login(phone: String) = apiService.login(phone)
 
 }

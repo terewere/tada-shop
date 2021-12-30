@@ -1,12 +1,14 @@
 package com.kasa.products
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import android.util.Log
+import androidx.lifecycle.*
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.cachedIn
+import com.kasa.auth.ApiResult
+import com.kasa.models.Order
 import com.kasa.models.ProductWithImages
+import com.kasa.utils.Constants
+import kotlinx.coroutines.launch
 import java.text.ParseException
 import javax.inject.Inject
 
@@ -23,8 +25,10 @@ constructor(
     private var savedState: SavedStateHandle = SavedStateHandle()
 
 
-    fun getProducts(categoryId: Int) = repo.getProducts(categoryId).cachedIn(viewModelScope)
+    private val _slides = MutableLiveData<ApiResult<List<String>>>()
+    var slides: LiveData<ApiResult<List<String>>> = _slides
 
+    fun getProducts(categoryId: Int) = repo.getProducts(categoryId).cachedIn(viewModelScope)
 
 
     fun addProfit( profit: Float) {
@@ -56,73 +60,24 @@ constructor(
 
 
 
-//    fun fetchDoggoImages2(): Flow<PagingData<UiModel>> {
-//        return repo.letDoggoImagesFlowDb()
-//            .map { pagingData: PagingData<ItemWithImagesAndCategory> ->
-//                // Map outer stream, so you can perform transformations on
-//                // each paging generation.
-//                pagingData
-//                    .map { user ->
-//                        // Convert items in stream to UiModel.UserModel.
-//                        UiModel.ItemModel(user)
-//                    }
-//                    .insertSeparators<UiModel.ItemModel, UiModel> { before, after ->
-//
-//
-//                        when {
-////                            before == null -> after?.model?.category?.label?.let {
-////                                UiModel.SeparatorItem(
-////                                    it
-////                                )
-////                            }
-//
-//                            before == null ->  null
-//
-//                            after == null -> before.model.category?.label?.let {
-//                                UiModel.SeparatorItem(
-//                                    it
-//                                )
-//                            }
-//
-//                            shouldSeparate(before, after) -> before.model.category?.label?.let {
-//                                UiModel.SeparatorItem(
-//                                    it
-//                                )
-//                            }
-//
-//                            // Return null to avoid adding a separator between two items.
-//                            else -> null
-////                    }
-//                        }
-//                    }
-//
-//            }.cachedIn(viewModelScope)
-//    }
-//
-//
-//    private fun shouldSeparate(before: UiModel.ItemModel, after: UiModel.ItemModel): Boolean {
-//       return before.model.category?.categoryId != after.model.category?.categoryId
-//    }
-}
+    fun getHomeSlides() {
 
-    sealed class UiModel {
-        data class ItemModel(val model: ProductWithImages) : UiModel()
-        data class SeparatorItem(val description: String) : UiModel()
+        viewModelScope.launch {
+            try {
+
+                val slides = repo.getHomeSlides()
+
+                Log.i(Constants.TAG, slides.toString())
+
+                _slides.postValue(ApiResult(success = slides ))
+
+            } catch (e: Throwable) {
+                _slides.postValue(ApiResult())
+               // Log.i(Constants.TAG, e.localizedMessage)
+
+            }
+        }
     }
 
+}
 
-
-
-//TODO ADDING A RANDOM ITEM INN THE LIST
-//val newResult: Flow<PagingData<UiModel>> = repository.getSearchResultStream(queryString)
-//    .map { pagingData ->
-//        var index = 0
-//        pagingData.map { UiModel.RepoItem(it, index++) }
-//    }
-//    .map {
-//        it.insertSeparators<UiModel.RepoItem, UiModel> { before, after ->
-//            if (before.index % 10) {
-//                Do something
-//            }
-//        }
-//    }

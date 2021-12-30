@@ -3,7 +3,7 @@ package com.kasa.dao
 import androidx.paging.PagingSource
 import androidx.room.*
 import com.kasa.models.*
-import com.kasa.paging3.RemoteKeys
+import com.kasa.models.RemoteKeys
 
 @Dao
 interface ProductDao {

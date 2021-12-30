@@ -13,6 +13,9 @@
         android:layout_height="wrap_content"
         android:indeterminate="true" />
 
+    <include
+        android:id="@+id/loading"
+        layout="@layout/layout_circular_loader"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

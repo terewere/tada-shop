@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12.0dip"
+        android:background="@color/white"
+        app:backgroundTint="@color/gray_dark"
+        android:orientation="vertical"
+        android:padding="12.0sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_order_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12.0dip"
+            android:layout_marginTop="8.0dip"
+            android:layout_marginBottom="4.0dip"
+            android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="0.02"
+            tools:text="1245567890"
+            android:textColor="#ff223263"
+            android:textSize="14.0sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_productImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:orientation="horizontal"
+            android:paddingStart="12.0sp"
+            android:paddingEnd="12.0sp">
+
+            <ImageView
+                android:id="@+id/iv_productImg"
+                android:layout_width="56.0dip"
+                android:layout_height="56.0dip"
+                android:layout_gravity="center"
+                android:layout_marginStart="4.0dip" />
+
+            <ImageView
+                android:id="@+id/loadingIndicator"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/progress_animation"
+                app:layout_constraintBottom_toBottomOf="@+id/category_image_view"
+                app:layout_constraintEnd_toEndOf="@+id/category_image_view"
+                app:layout_constraintStart_toStartOf="@+id/category_image_view"
+                app:layout_constraintTop_toTopOf="@+id/category_image_view" />
+
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginBottom="4.0dip"
+                android:fontFamily="@font/poppins_medium"
+                android:letterSpacing="0.02"
+                android:text="Product Name"
+                android:textColor="@color/gray_dark"
+                android:textSize="14.0sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/my_order1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12.0dip"
+            android:layout_marginTop="15.0dip"
+            android:text="Order at Lafyuu : August 1, 2017"
+            android:textSize="16.0sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12.0sp"
+            android:paddingEnd="12.0sp">
+
+            <TextView
+                android:id="@+id/my_order2"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1.0"
+                android:text="Order Status"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@+id/tv_order_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/pending_text"
+                android:fontFamily="@font/poppins_bold"
+                android:padding="2.0dip"
+                android:text="Shipping"
+                android:textColor="@color/colorAccent"
+                android:textSize="10.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12.0sp"
+            android:paddingEnd="12.0sp">
+
+            <TextView
+                android:id="@+id/my_order3"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="Qty"
+                android:textSize="14.0dip" />
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Items purchased"
+                android:textColor="@color/black"
+                android:textSize="14.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="12.0sp"
+            android:paddingEnd="12.0sp">
+
+            <TextView
+                android:id="@+id/my_order4"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="Total"
+                android:textSize="14.0dip" />
+
+            <TextView
+                android:id="@+id/tv_profit_from_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_extra_bold"
+                android:text="₵67.90"
+                android:textColor="#ff1099ee"
+                android:textSize="14.0dip" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trackOrder"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginVertical="10.0dip"
+            android:background="@color/colorAccent"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Track order"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12.0dip" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

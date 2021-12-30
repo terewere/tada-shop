@@ -7,13 +7,8 @@ import androidx.room.TypeConverters
 import com.kasa.dao.CategoryDao
 import com.kasa.dao.ProductDao
 import com.kasa.dao.ShoppingCartDao
-import com.kasa.entities.*
-import com.kasa.models.CartItem
-import com.kasa.models.Category
-import com.kasa.models.Product
-import com.kasa.models.ProductImage
-import com.kasa.paging3.RemoteKeys
-import com.kasa.paging3.RemoteKeysDao
+import com.kasa.dao.RemoteKeysDao
+import com.kasa.models.*
 import java.util.*
 
 
