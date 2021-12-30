@@ -1,4 +1,4 @@
-# Shopping Android App
+# Tada Shop Android App
 A mini e-commerce android application written in Kotlin where users can start selling without investing any capital. 
 
 
