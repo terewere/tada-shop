@@ -64,16 +64,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         setupUI()
 
 
-//        lifecycleScope.launch {
-//            viewModel.getProducts(1).distinctUntilChanged().collectLatest {
-//                 i("testing", it.toString())
-//               // listAdapter.submitData(it)
-//
-//
-//            }
-//        }
-
-
     }
 
 
