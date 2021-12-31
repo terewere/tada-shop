@@ -3,7 +3,7 @@ A mini e-commerce android application written in Kotlin where users can start se
 
 
 ## Overview
-The application contains list of products such as shoes, clothings, electronic gadgets on which user can click to view its details and then, add them to cart. User can browse through a list of all products as well as browse base on category. Also, User can sell products, if he/she signed up as a Seller.
+The application contains list of products such as shoes, clothings, electronic gadgets on which user can click to view its details and then, add them to cart. User can browse through a list of all products as well as browse base on category.
 Some other features are as following:
 - Login / Signup .
 - Recyclerview with variable span size to show products.
